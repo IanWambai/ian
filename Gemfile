@@ -23,4 +23,5 @@ group :development do
   gem 'rails_admin'
 gem 'paper_trail', '~> 3.0.0'
 	gem 'annotate'
+	gem 'devise'
 end
