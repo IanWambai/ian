@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  approved   :boolean
+#  is_admin   :boolean
 #
 
 require 'test_helper'
