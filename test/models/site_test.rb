@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: sites
 #
 #  id         :integer          not null, primary key
-#  email      :string(255)
+#  urls       :string(255)
+#  comments   :text
 #  created_at :datetime
 #  updated_at :datetime
-#  approved   :boolean
-#  admin      :boolean
 #
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class SiteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

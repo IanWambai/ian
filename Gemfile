@@ -21,6 +21,6 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rails_admin'
-  gem 'papertrail', '~> 0.9.12'
-  gem 'annotate'
+gem 'paper_trail', '~> 3.0.0'
+	gem 'annotate'
 end
