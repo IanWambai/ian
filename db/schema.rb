@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226132232) do
+ActiveRecord::Schema.define(version: 20150226132518) do
 
   create_table "sites", force: true do |t|
     t.string   "urls"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150226132232) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "approved"
-    t.boolean  "is_admin"
+    t.boolean  "admin"
   end
 
   create_table "versions", force: true do |t|
