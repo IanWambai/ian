@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :admin
 
-  root to: 'users#index'
+  root to: 'users#new'
 end

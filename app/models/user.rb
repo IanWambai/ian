@@ -11,5 +11,5 @@
 #
 
 class User < ActiveRecord::Base
-
+validates :email,:presence => {:message => "Email field cannot be empty."}, :allow_blank => false,:uniqueness => { :case_sensitive => true } 
 end
