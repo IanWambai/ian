@@ -186,6 +186,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (~> 4.1.8)
+  actionpack (~> 4.1.8)
   annotate
   better_errors
   binding_of_caller
