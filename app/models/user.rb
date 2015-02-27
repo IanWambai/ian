@@ -11,11 +11,14 @@
 #
 
 class User < ActiveRecord::Base
+
+  has_many :urls
+  has_many :comments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
-validates :email,:presence => {:message => "Email field cannot be empty."}, :allow_blank => false,:uniqueness => { :case_sensitive => true } 
+validates :email,:presence => {:message => "Email field cannot be empty."}, :allow_blank => false,:uniqueness => { :case_sensitive   => true } 
 
  # def send_super_admin_mail
  #    SuperAdminMailer.user_approval(self).deliver
@@ -40,10 +43,10 @@ validates :email,:presence => {:message => "Email field cannot be empty."}, :all
 		
 	# end
 
-     after_create :send_admin_mail
-       def send_admin_mail
-        AdminMailer.user_approval(self).deliver
-       end	
+     # after_create :send_admin_mail
+     #   def send_admin_mail
+     #    AdminMailer.user_approval(self).deliver
+     #   end	
 
        def self.send_reset_password_instructions(attributes={})
           recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)

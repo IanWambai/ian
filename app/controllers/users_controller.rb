@@ -27,19 +27,19 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  # def create
-  #   @user = User.new(user_params)
+  def create
+    @user = User.new(user_params)
 
-  #   respond_to do |format|
-  #     if @user.save
-  #       format.html { redirect_to @user, notice: 'Regestration successful , hold on tight and wait for approval.' }
-  #       format.json { render :show, status: :created, location: @user }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @user.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'Regestration successful , hold on tight and wait for approval.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -70,10 +70,10 @@ class UsersController < ApplicationController
     @user.approved = !@user.approved
     @user.save!
     if @user.approved
-      AdminMailer.user_approval_notification(@user).deliver
+      # AdminMailer.user_approval_notification(@user).deliver
       redirect_to users_path, notice: "User has been approved!"
     else
-      AdminMailer.user_unapproval_notification(@user).deliver
+      # AdminMailer.user_unapproval_notification(@user).deliver
       redirect_to users_path, notice: "User has been unapproved!"
     end
   end

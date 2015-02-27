@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226232113) do
+ActiveRecord::Schema.define(version: 20150227033425) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,20 +31,11 @@ ActiveRecord::Schema.define(version: 20150226232113) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "sites", force: true do |t|
-    t.string   "urls"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "sites" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "admin"
-    t.boolean  "approved",   default: false, null: false
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "versions", force: true do |t|
     t.string   "item_type",  null: false
