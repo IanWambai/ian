@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.1.8'
 gem 'actionpack', '~>  4.1.8'
@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'tzinfo-data'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
